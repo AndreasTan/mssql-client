@@ -1,7 +1,13 @@
 FROM quay.io/centos/centos:stream9
 MAINTAINER Andreas Tan
-
-RUN  rpm --import https://packages.microsoft.com/keys/microsoft.asc && curl -o /etc/yum.repos.d/mssql-release.repo https://packages.microsoft.com/config/rhel/7/prod.repo && ACCEPT_EULA=Y yum install -y msodbcsql mssql-tools unixODBC-devel && yum clean all -y
+RUN curl https://packages.microsoft.com/config/rhel/9/prod.repo -o /etc/yum.repos.d/msprod.repo 
+RUN yum search odbc
+RUN yum search msodbcsql17
+ENV ACCEPT_EULA=Y
+RUN yum install -y unixODBC unixODBC-devel
+RUN yum download -y msodbcsql17
+RUN rpm -Uvh --nodeps msodbcsql17*rpm
+RUN yum install -y mssql-tools && yum clean all -y
 
 ADD ./init.sh ./
 ADD ./uid_entrypoint.sh ./
