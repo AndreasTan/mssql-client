@@ -1,4 +1,4 @@
-FROM dokken/centos-stream-9
+FROM quay.io/centos/centos:stream9
 MAINTAINER Andreas Tan
 
 RUN  rpm --import https://packages.microsoft.com/keys/microsoft.asc && curl -o /etc/yum.repos.d/mssql-release.repo https://packages.microsoft.com/config/rhel/7/prod.repo && ACCEPT_EULA=Y yum install -y msodbcsql mssql-tools unixODBC-devel && yum clean all -y
