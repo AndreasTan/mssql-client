@@ -6,6 +6,8 @@ RUN yum search msodbcsql17
 ENV ACCEPT_EULA=Y
 RUN yum install -y unixODBC unixODBC-devel
 RUN yum install -y msodbcsql17
+RUN yum install -y iputils
+RUN yum install -y bind-utils
 RUN yum install -y mssql-tools && yum clean all -y
 
 ADD ./init.sh ./
