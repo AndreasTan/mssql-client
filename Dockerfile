@@ -5,7 +5,7 @@ RUN yum search odbc
 RUN yum search msodbcsql17
 ENV ACCEPT_EULA=Y
 RUN yum install -y unixODBC unixODBC-devel
-RUN yum download -y msodbcsql17
+RUN yum --downloadonly -y msodbcsql17
 RUN rpm -Uvh --nodeps msodbcsql17*rpm
 RUN yum install -y mssql-tools && yum clean all -y
 
