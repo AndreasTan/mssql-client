@@ -9,7 +9,7 @@ RUN yum install -y msodbcsql17
 RUN yum install -y iputils
 RUN yum install -y bind-utils
 RUN yum install -y traceroute
-RUN yum install -y podman
+RUN yum install -y curl
 RUN yum install -y mssql-tools && yum clean all -y
 ADD ./init.sh ./
 ADD ./uid_entrypoint.sh ./
