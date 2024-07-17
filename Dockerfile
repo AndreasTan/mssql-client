@@ -10,6 +10,7 @@ RUN yum install -y iputils
 RUN yum install -y bind-utils
 RUN yum install -y traceroute
 RUN yum install -y libcurl-minimal
+RUN yum install -y telnet
 RUN yum install -y mssql-tools && yum clean all -y
 ADD ./init.sh ./
 ADD ./uid_entrypoint.sh ./
