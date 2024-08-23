@@ -7,6 +7,7 @@ ENV ACCEPT_EULA=Y
 RUN yum install -y unixODBC unixODBC-devel
 RUN yum install -y msodbcsql18
 RUN yum install -y iputils
+RUN yun install -y iproute
 RUN yum install -y net-tools
 RUN yum install -y bind-utils
 RUN yum install -y traceroute
