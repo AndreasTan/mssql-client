@@ -15,6 +15,7 @@ RUN yum install -y libcurl-minimal
 RUN yum install -y telnet
 RUN yum install -y nfs-utils
 RUN yum install -y mssql-tools && yum clean all -y
+RUN mkdir -p /mnt/test
 ADD ./init.sh ./
 ADD ./uid_entrypoint.sh ./
 RUN chown 1001:0 *.sh && chmod +wx *.sh
