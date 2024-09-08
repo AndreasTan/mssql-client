@@ -14,6 +14,7 @@ RUN yum install -y traceroute
 RUN yum install -y libcurl-minimal
 RUN yum install -y telnet
 RUN yum install -y nfs-utils
+RUN yum install -y iperf3
 RUN yum install -y mssql-tools && yum clean all -y
 RUN mkdir -p /mnt/test
 ADD ./init.sh ./
