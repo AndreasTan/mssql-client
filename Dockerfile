@@ -17,6 +17,7 @@ RUN yum install -y nfs-utils
 RUN yum install -y iperf3
 RUN yum install -y fio
 RUN yum install -y libaio
+RUN yum install -y wget
 RUN yum install -y mssql-tools && yum clean all -y
 RUN mkdir -p /mnt/test
 ADD ./init.sh ./
